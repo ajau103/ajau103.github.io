@@ -1,705 +1,1572 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="Professional coworking spaces, private offices, dedicated desks and meeting rooms for modern professionals and growing teams.">
+  <title>WorkNest | Premium Coworking Space</title>
 
-    <title>WorkNest | Premium Coworking Space</title>
+  <meta
+    name="description"
+    content="Discover WorkNest, a premium coworking space designed for focused work, flexible memberships, private offices, meeting rooms, and modern amenities."
+  >
 
-    <link rel="stylesheet" href="style.css">
+  <style>
+    :root {
+      --navy: #182b3a;
+      --navy-dark: #10212d;
+      --teal: #167d78;
+      --teal-dark: #106662;
+      --gold: #d6a84f;
+      --cream: #f7f5ef;
+      --light: #f4f7f8;
+      --white: #ffffff;
+      --dark: #17212b;
+      --text: #64717c;
+      --border: #e1e7ea;
+      --shadow: 0 18px 55px rgba(17, 37, 50, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--dark);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background: rgba(255, 255, 255, 0.98);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      max-width: 1180px;
+      min-height: 72px;
+      margin: auto;
+      padding: 0 24px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      color: var(--navy);
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: -0.8px;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--teal);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+
+      color: #47545f;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover {
+      color: var(--teal);
+    }
+
+    .phone-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 11px 18px;
+      border-radius: 5px;
+
+      background: var(--teal);
+      color: var(--white);
+
+      font-size: 14px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .phone-button:hover {
+      background: var(--teal-dark);
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 690px;
+
+      display: flex;
+      align-items: center;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(16, 33, 45, 0.94) 0%,
+          rgba(16, 33, 45, 0.82) 46%,
+          rgba(16, 33, 45, 0.38) 100%
+        ),
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1900&q=85")
+        center / cover no-repeat;
+    }
+
+    .hero-container {
+      width: 100%;
+      max-width: 1180px;
+      margin: auto;
+      padding: 80px 24px;
+
+      display: grid;
+      grid-template-columns: 1.12fr 0.88fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .hero-content {
+      color: var(--white);
+    }
+
+    .eyebrow {
+      display: inline-block;
+
+      margin-bottom: 17px;
+
+      color: #e8c87f;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 680px;
+
+      font-size: clamp(42px, 5vw, 64px);
+      line-height: 1.05;
+      letter-spacing: -2.4px;
+
+      margin-bottom: 22px;
+    }
+
+    .hero-description {
+      max-width: 650px;
+
+      color: rgba(255,255,255,0.88);
+      font-size: 18px;
+
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .button {
+      min-height: 50px;
+      padding: 0 23px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 5px;
+
+      font-size: 15px;
+      font-weight: 800;
+
+      transition: 0.2s ease;
+    }
+
+    .button-primary {
+      background: var(--gold);
+      color: #1d1d1d;
+    }
+
+    .button-primary:hover {
+      filter: brightness(1.06);
+      transform: translateY(-1px);
+    }
+
+    .button-outline {
+      border: 1px solid rgba(255,255,255,0.72);
+      color: var(--white);
+    }
+
+    .button-outline:hover {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    /* =========================
+       TOUR / LEAD CARD
+    ========================== */
+
+    .lead-card {
+      background: var(--white);
+      border-radius: 10px;
+      padding: 31px;
+
+      box-shadow: 0 25px 70px rgba(0,0,0,0.25);
+    }
+
+    .lead-card h2 {
+      color: var(--navy);
+
+      font-size: 27px;
+      line-height: 1.2;
+
+      margin-bottom: 8px;
+    }
+
+    .lead-intro {
+      color: var(--text);
+      font-size: 14px;
+
+      margin-bottom: 22px;
+    }
+
+    .form-group {
+      margin-bottom: 14px;
+    }
+
+    .form-group label {
+      display: block;
+
+      color: #3c4a55;
+      font-size: 13px;
+      font-weight: 700;
+
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      height: 46px;
+
+      padding: 0 13px;
+
+      border: 1px solid #d5dde1;
+      border-radius: 5px;
+
+      background: var(--white);
+
+      font-family: inherit;
+      font-size: 14px;
+
+      outline: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--teal);
+
+      box-shadow:
+        0 0 0 3px rgba(22,125,120,0.09);
+    }
+
+    .submit-button {
+      width: 100%;
+      height: 49px;
+
+      border: 0;
+      border-radius: 5px;
+
+      background: var(--teal);
+      color: var(--white);
+
+      font-size: 15px;
+      font-weight: 800;
+
+      cursor: pointer;
+    }
+
+    .submit-button:hover {
+      background: var(--teal-dark);
+    }
+
+    .form-disclaimer {
+      color: #7e8890;
+      font-size: 10.5px;
+      line-height: 1.5;
+
+      text-align: center;
+
+      margin-top: 11px;
+    }
+
+    /* =========================
+       TRUST BAR
+    ========================== */
+
+    .trust-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .trust-container {
+      max-width: 1180px;
+      margin: auto;
+      padding: 25px 24px;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .trust-icon {
+      width: 39px;
+      height: 39px;
+      flex-shrink: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: #eaf6f5;
+      color: var(--teal);
+
+      font-weight: 900;
+    }
+
+    .trust-item strong {
+      display: block;
+
+      color: var(--navy);
+      font-size: 14px;
+    }
+
+    .trust-item span {
+      display: block;
+
+      color: var(--text);
+      font-size: 12px;
+    }
+
+    /* =========================
+       GENERAL
+    ========================== */
+
+    section {
+      padding: 85px 24px;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin: 0 auto 48px;
+
+      text-align: center;
+    }
+
+    .section-heading .eyebrow {
+      color: var(--teal);
+      margin-bottom: 9px;
+    }
+
+    .section-heading h2 {
+      color: var(--navy);
+
+      font-size: 38px;
+      line-height: 1.2;
+
+      margin-bottom: 13px;
+    }
+
+    .section-heading p {
+      color: var(--text);
+    }
+
+    /* =========================
+       WORKSPACE TYPES
+    ========================== */
+
+    .spaces {
+      background: var(--cream);
+    }
+
+    .space-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 23px;
+    }
+
+    .space-card {
+      overflow: hidden;
+
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .space-image {
+      height: 215px;
+      overflow: hidden;
+    }
+
+    .space-image img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      transition: transform 0.4s ease;
+    }
+
+    .space-card:hover .space-image img {
+      transform: scale(1.04);
+    }
+
+    .space-content {
+      padding: 23px;
+    }
+
+    .space-content h3 {
+      color: var(--navy);
+
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .space-content p {
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    /* =========================
+       AMENITIES
+    ========================== */
+
+    .amenity-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .amenity-card {
+      padding: 30px;
+
+      border: 1px solid var(--border);
+      border-radius: 8px;
+
+      background: var(--white);
+    }
+
+    .amenity-icon {
+      width: 47px;
+      height: 47px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin-bottom: 18px;
+
+      border-radius: 7px;
+
+      background: #edf6f5;
+      color: var(--teal);
+
+      font-size: 19px;
+      font-weight: 900;
+    }
+
+    .amenity-card h3 {
+      color: var(--navy);
+
+      font-size: 19px;
+      margin-bottom: 8px;
+    }
+
+    .amenity-card p {
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    /* =========================
+       PROCESS
+    ========================== */
+
+    .process {
+      background: var(--light);
+    }
+
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+    }
+
+    .process-card {
+      text-align: center;
+    }
+
+    .process-number {
+      width: 54px;
+      height: 54px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      margin: 0 auto 18px;
+
+      border-radius: 50%;
+
+      background: var(--navy);
+      color: var(--white);
+
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .process-card h3 {
+      color: var(--navy);
+
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .process-card p {
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    /* =========================
+       CTA
+    ========================== */
+
+    .cta {
+      background:
+        linear-gradient(
+          120deg,
+          var(--navy),
+          var(--navy-dark)
+        );
+
+      color: var(--white);
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 40px;
+      line-height: 1.2;
+
+      margin-bottom: 13px;
+    }
+
+    .cta p {
+      max-width: 650px;
+
+      margin: 0 auto 27px;
+
+      color: rgba(255,255,255,0.78);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #0b1720;
+      color: rgba(255,255,255,0.65);
+
+      padding: 45px 24px 22px;
+    }
+
+    .footer-grid {
+      max-width: 1180px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+
+      gap: 40px;
+
+      padding-bottom: 32px;
+    }
+
+    footer h3 {
+      color: var(--white);
+
+      font-size: 18px;
+      margin-bottom: 12px;
+    }
+
+    footer p,
+    footer a {
+      font-size: 13px;
+    }
+
+    footer a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      max-width: 1180px;
+      margin: auto;
+
+      border-top: 1px solid rgba(255,255,255,0.1);
+
+      padding-top: 19px;
+
+      text-align: center;
+      font-size: 11px;
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 850px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-container {
+        grid-template-columns: 1fr;
+
+        padding-top: 60px;
+        padding-bottom: 60px;
+
+        gap: 40px;
+      }
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .space-grid,
+      .amenity-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-container {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .nav {
+        min-height: 65px;
+        padding: 0 15px;
+      }
+
+      .logo {
+        font-size: 20px;
+      }
+
+      .phone-button {
+        padding: 9px 11px;
+        font-size: 12px;
+      }
+
+      .hero-container {
+        padding: 50px 18px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+        letter-spacing: -1.5px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .lead-card {
+        padding: 23px 19px;
+      }
+
+      section {
+        padding: 65px 18px;
+      }
+
+      .section-heading h2,
+      .cta h2 {
+        font-size: 30px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- TOP BAR -->
-    <div class="topbar">
-        Flexible workspaces for professionals, startups & growing teams
+  <!-- =========================
+       HEADER
+  ========================== -->
+
+  <header>
+
+    <nav class="nav">
+
+      <a href="#top" class="logo">
+        Work<span>Nest</span>
+      </a>
+
+      <div class="nav-links">
+
+        <a href="#spaces">
+          Spaces
+        </a>
+
+        <a href="#amenities">
+          Amenities
+        </a>
+
+        <a href="#process">
+          How It Works
+        </a>
+
+        <a href="#contact">
+          Contact
+        </a>
+
+      </div>
+
+      <!-- Replace with your actual US business number -->
+      <a
+        href="tel:+18005550150"
+        class="phone-button"
+      >
+        (800) 555-0150
+      </a>
+
+    </nav>
+
+  </header>
+
+
+  <main id="top">
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+      <div class="hero-container">
+
+        <div class="hero-content">
+
+          <span class="eyebrow">
+            Premium Coworking Space
+          </span>
+
+          <h1>
+            A Better Place to Work, Connect & Grow
+          </h1>
+
+          <p class="hero-description">
+            WorkNest is a modern coworking environment designed
+            for professionals, entrepreneurs, remote teams, and
+            growing businesses seeking a productive place to work.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a
+              href="#contact"
+              class="button button-primary"
+            >
+              Schedule a Tour
+            </a>
+
+            <a
+              href="tel:+18005550150"
+              class="button button-outline"
+            >
+              Call (800) 555-0150
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <!-- =========================
+             TOUR FORM
+        ========================== -->
+
+        <div
+          class="lead-card"
+          id="contact"
+        >
+
+          <h2>
+            Schedule a Tour
+          </h2>
+
+          <p class="lead-intro">
+            Tell us what you're looking for and our team
+            can help you explore the right workspace option.
+          </p>
+
+          <form id="tourForm">
+
+            <div class="form-group">
+
+              <label for="name">
+                Full Name
+              </label>
+
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your full name"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="email">
+                Email Address
+              </label>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="phone">
+                Phone Number
+              </label>
+
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="(555) 555-5555"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="workspace">
+                Workspace Type
+              </label>
+
+              <select
+                id="workspace"
+                name="workspace"
+                required
+              >
+
+                <option value="">
+                  Select an option
+                </option>
+
+                <option value="hot-desk">
+                  Hot Desk
+                </option>
+
+                <option value="dedicated-desk">
+                  Dedicated Desk
+                </option>
+
+                <option value="private-office">
+                  Private Office
+                </option>
+
+                <option value="team-space">
+                  Team Space
+                </option>
+
+                <option value="meeting-room">
+                  Meeting Room
+                </option>
+
+              </select>
+
+            </div>
+
+
+            <button
+              type="submit"
+              class="submit-button"
+            >
+              Request a Tour
+            </button>
+
+
+            <p class="form-disclaimer">
+              By submitting this form, you agree that a representative
+              may contact you regarding your coworking inquiry.
+            </p>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         TRUST BAR
+    ========================== -->
+
+    <div class="trust-bar">
+
+      <div class="trust-container">
+
+        <div class="trust-item">
+
+          <div class="trust-icon">
+            ✓
+          </div>
+
+          <div>
+
+            <strong>
+              Flexible Workspace
+            </strong>
+
+            <span>
+              Options for different work styles
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="trust-item">
+
+          <div class="trust-icon">
+            ◆
+          </div>
+
+          <div>
+
+            <strong>
+              Modern Environment
+            </strong>
+
+            <span>
+              Designed for focused work
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="trust-item">
+
+          <div class="trust-icon">
+            +
+          </div>
+
+          <div>
+
+            <strong>
+              Professional Community
+            </strong>
+
+            <span>
+              Work alongside other professionals
+            </span>
+
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
 
 
-    <!-- NAVBAR -->
-    <header>
-        <div class="container nav">
+    <!-- =========================
+         WORKSPACE OPTIONS
+    ========================== -->
 
-            <a href="#home" class="logo">
-                Work<span>Nest</span>
-            </a>
+    <section
+      class="spaces"
+      id="spaces"
+    >
 
-            <nav>
-                <a href="#spaces">Spaces</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#why-us">Why Us</a>
-                <a href="#contact">Contact</a>
-            </nav>
+      <div class="container">
 
-            <a href="#contact" class="btn btn-primary">
-                Book a Tour
-            </a>
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            Workspace Options
+          </span>
+
+          <h2>
+            Find a Workspace That Fits Your Workday
+          </h2>
+
+          <p>
+            From flexible desks to private offices, choose an
+            environment that matches the way you work.
+          </p>
 
         </div>
-    </header>
 
 
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
+        <div class="space-grid">
 
-        <div class="container hero-grid">
+          <div class="space-card">
 
-            <div class="hero-content">
+            <div class="space-image">
 
-                <div class="eyebrow">
-                    ● Premium Coworking Experience
-                </div>
-
-                <h1>
-                    Work better.<br>
-                    <span>Grow faster.</span>
-                </h1>
-
-                <p>
-                    Professional coworking spaces designed for focus,
-                    collaboration, and growth. Get a workspace that
-                    works as hard as you do.
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a href="#contact" class="btn btn-primary">
-                        Book a Free Tour →
-                    </a>
-
-                    <a href="tel:+14155550138"
-                       class="btn btn-outline">
-                        Call +1 (415) 555-0138
-                    </a>
-
-                </div>
-
-                <div class="trust">
-
-                    <span>✓ <b>Flexible Plans</b></span>
-
-                    <span>✓ <b>Fast Wi-Fi</b></span>
-
-                    <span>✓ <b>Meeting Rooms</b></span>
-
-                </div>
+              <img
+                src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80"
+                alt="Modern coworking workspace"
+                loading="lazy"
+              >
 
             </div>
 
+            <div class="space-content">
 
-            <!-- HERO CARD -->
-            <div class="hero-card">
+              <h3>
+                Flexible Desks
+              </h3>
 
-                <div class="office-image">
-
-                    <div class="office-label">
-
-                        <strong>
-                            Designed for productivity.
-                        </strong>
-
-                        <small>
-                            Private offices • Dedicated desks • Hot desks
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-                <div class="stats">
-
-                    <div class="stat">
-                        <strong>24/7</strong>
-                        <span>Access options</span>
-                    </div>
-
-                    <div class="stat">
-                        <strong>1 Gbps</strong>
-                        <span>Fast Wi-Fi</span>
-                    </div>
-
-                    <div class="stat">
-                        <strong>Free</strong>
-                        <span>Tour available</span>
-                    </div>
-
-                </div>
+              <p>
+                A professional place to work when you need
+                flexibility without a long-term office commitment.
+              </p>
 
             </div>
 
+          </div>
+
+
+          <div class="space-card">
+
+            <div class="space-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=900&q=80"
+                alt="Private office workspace"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="space-content">
+
+              <h3>
+                Private Offices
+              </h3>
+
+              <p>
+                Dedicated workspace for individuals and teams
+                looking for added privacy and focus.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="space-card">
+
+            <div class="space-image">
+
+              <img
+                src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
+                alt="Collaborative office space"
+                loading="lazy"
+              >
+
+            </div>
+
+            <div class="space-content">
+
+              <h3>
+                Team Spaces
+              </h3>
+
+              <p>
+                Comfortable collaborative environments for
+                teams, projects, and growing businesses.
+              </p>
+
+            </div>
+
+          </div>
+
         </div>
+
+      </div>
 
     </section>
 
 
-    <!-- FEATURES -->
-    <section id="spaces">
+    <!-- =========================
+         AMENITIES
+    ========================== -->
 
-        <div class="container">
+    <section id="amenities">
 
-            <div class="section-heading">
+      <div class="container">
 
-                <h2>
-                    Everything you need to do your best work
-                </h2>
+        <div class="section-heading">
 
-                <p>
-                    A polished workspace without the long-term
-                    commitment of a traditional office.
-                </p>
+          <span class="eyebrow">
+            Amenities
+          </span>
 
-            </div>
+          <h2>
+            Everything You Need for a Productive Workday
+          </h2>
 
-
-            <div class="features-grid">
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">▦</div>
-
-                    <h3>Private Offices</h3>
-
-                    <p>
-                        Quiet, professional offices for individuals
-                        and teams who need privacy and focus.
-                    </p>
-
-                </div>
-
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">⌘</div>
-
-                    <h3>Dedicated Desks</h3>
-
-                    <p>
-                        Your own desk in a professional environment
-                        with reliable connectivity and amenities.
-                    </p>
-
-                </div>
-
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">◫</div>
-
-                    <h3>Meeting Rooms</h3>
-
-                    <p>
-                        Client-ready meeting spaces for presentations,
-                        interviews and team sessions.
-                    </p>
-
-                </div>
-
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">⚡</div>
-
-                    <h3>High-Speed Wi-Fi</h3>
-
-                    <p>
-                        Reliable internet built for video calls,
-                        cloud applications and everyday business.
-                    </p>
-
-                </div>
-
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">☕</div>
-
-                    <h3>Business Amenities</h3>
-
-                    <p>
-                        Comfortable common areas and practical
-                        amenities that keep your workday moving.
-                    </p>
-
-                </div>
-
-
-                <div class="feature-card">
-
-                    <div class="feature-icon">◎</div>
-
-                    <h3>Professional Community</h3>
-
-                    <p>
-                        Meet entrepreneurs, freelancers and growing
-                        businesses.
-                    </p>
-
-                </div>
-
-            </div>
+          <p>
+            A thoughtfully designed workspace with practical
+            amenities to help you stay focused.
+          </p>
 
         </div>
+
+
+        <div class="amenity-grid">
+
+          <div class="amenity-card">
+
+            <div class="amenity-icon">
+              Wi
+            </div>
+
+            <h3>
+              High-Speed Wi-Fi
+            </h3>
+
+            <p>
+              Stay connected throughout your workday with
+              reliable workspace connectivity.
+            </p>
+
+          </div>
+
+
+          <div class="amenity-card">
+
+            <div class="amenity-icon">
+              ☕
+            </div>
+
+            <h3>
+              Coffee & Refreshments
+            </h3>
+
+            <p>
+              Take a break and recharge with convenient
+              refreshments available within the workspace.
+            </p>
+
+          </div>
+
+
+          <div class="amenity-card">
+
+            <div class="amenity-icon">
+              ◇
+            </div>
+
+            <h3>
+              Meeting Rooms
+            </h3>
+
+            <p>
+              Professional spaces for meetings, presentations,
+              calls, and collaboration.
+            </p>
+
+          </div>
+
+
+          <div class="amenity-card">
+
+            <div class="amenity-icon">
+              ⚡
+            </div>
+
+            <h3>
+              Work-Ready Spaces
+            </h3>
+
+            <p>
+              Comfortable desks and professional surroundings
+              designed for focused work.
+            </p>
+
+          </div>
+
+
+          <div class="amenity-card">
+
+            <div class="amenity-icon">
+              +
+            </div>
+
+            <h3>
+              Community Areas
+            </h3>
+
+            <p>
+              Shared areas where members can connect,
+              collaborate, or take a break.
+            </p>
+
+          </div>
+
+
+          <div class="amenity-card">
+
+            <div class="amenity-icon">
+              24
+            </div>
+
+            <h3>
+              Flexible Access
+            </h3>
+
+            <p>
+              Explore membership options designed around
+              different schedules and work preferences.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
 
     </section>
 
 
-    <!-- PRICING -->
-    <section class="pricing" id="pricing">
+    <!-- =========================
+         PROCESS
+    ========================== -->
 
-        <div class="container">
+    <section
+      class="process"
+      id="process"
+    >
 
-            <div class="section-heading">
+      <div class="container">
 
-                <h2>
-                    Simple plans. No complicated commitments.
-                </h2>
+        <div class="section-heading">
 
-                <p>
-                    Choose the setup that fits the way you work.
-                </p>
+          <span class="eyebrow">
+            Getting Started
+          </span>
 
-            </div>
+          <h2>
+            Your New Workspace Is Just Three Steps Away
+          </h2>
 
-
-            <div class="pricing-grid">
-
-
-                <!-- PLAN 1 -->
-                <div class="pricing-card">
-
-                    <h3>Hot Desk</h3>
-
-                    <div class="price">
-                        $199
-                        <span>/ month</span>
-                    </div>
-
-                    <p>
-                        Flexible workspace for independent professionals.
-                    </p>
-
-                    <ul>
-                        <li>Shared workspace</li>
-                        <li>High-speed Wi-Fi</li>
-                        <li>Business lounge access</li>
-                        <li>Community events</li>
-                    </ul>
-
-                    <a href="#contact" class="btn btn-outline">
-                        Get Started
-                    </a>
-
-                </div>
-
-
-                <!-- PLAN 2 -->
-                <div class="pricing-card popular">
-
-                    <div class="popular-badge">
-                        POPULAR
-                    </div>
-
-                    <h3>Dedicated Desk</h3>
-
-                    <div class="price">
-                        $349
-                        <span>/ month</span>
-                    </div>
-
-                    <p>
-                        Your own desk in a professional coworking
-                        environment.
-                    </p>
-
-                    <ul>
-                        <li>Dedicated workspace</li>
-                        <li>High-speed Wi-Fi</li>
-                        <li>Meeting room credits</li>
-                        <li>Mail & business support</li>
-                    </ul>
-
-                    <a href="#contact" class="btn btn-primary">
-                        Choose This Plan
-                    </a>
-
-                </div>
-
-
-                <!-- PLAN 3 -->
-                <div class="pricing-card">
-
-                    <h3>Private Office</h3>
-
-                    <div class="price">
-                        $699
-                        <span>/ month</span>
-                    </div>
-
-                    <p>
-                        Private space for professionals and small teams.
-                    </p>
-
-                    <ul>
-                        <li>Private lockable office</li>
-                        <li>High-speed Wi-Fi</li>
-                        <li>Meeting room access</li>
-                        <li>Professional business address</li>
-                    </ul>
-
-                    <a href="#contact" class="btn btn-outline">
-                        Ask About Offices
-                    </a>
-
-                </div>
-
-            </div>
+          <p>
+            Tell us what you need and we'll help you explore
+            the workspace options available to you.
+          </p>
 
         </div>
+
+
+        <div class="process-grid">
+
+          <div class="process-card">
+
+            <div class="process-number">
+              1
+            </div>
+
+            <h3>
+              Tell Us What You Need
+            </h3>
+
+            <p>
+              Complete the short form and select the workspace
+              option you're interested in.
+            </p>
+
+          </div>
+
+
+          <div class="process-card">
+
+            <div class="process-number">
+              2
+            </div>
+
+            <h3>
+              Schedule a Tour
+            </h3>
+
+            <p>
+              Speak with our team and arrange a time to
+              explore the workspace.
+            </p>
+
+          </div>
+
+
+          <div class="process-card">
+
+            <div class="process-number">
+              3
+            </div>
+
+            <h3>
+              Choose Your Space
+            </h3>
+
+            <p>
+              Explore the available options and choose
+              the workspace that fits your needs.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
 
     </section>
 
 
-    <!-- WHY US -->
-    <section id="why-us">
+    <!-- =========================
+         CTA
+    ========================== -->
 
-        <div class="container about">
-
-            <div class="about-box">
-
-                <small>
-                    BUILT FOR MODERN WORK
-                </small>
-
-                <h2>
-                    A workspace that feels like your business
-                    already belongs here.
-                </h2>
-
-                <p>
-                    Professional design, practical amenities,
-                    and flexible workspace options in one place.
-                </p>
-
-            </div>
-
-
-            <div class="about-content">
-
-                <h2>
-                    More than a desk.
-                    A better way to work.
-                </h2>
-
-                <p>
-                    Whether you're building a company, working
-                    remotely, or meeting clients, WorkNest gives
-                    you the professional environment you need
-                    without the overhead of a traditional office.
-                </p>
-
-
-                <div class="check-grid">
-
-                    <div>✓ Flexible membership options</div>
-
-                    <div>✓ Professional meeting spaces</div>
-
-                    <div>✓ Reliable high-speed internet</div>
-
-                    <div>✓ Business-ready environment</div>
-
-                    <div>✓ Comfortable shared areas</div>
-
-                    <div>✓ Easy booking process</div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- TESTIMONIAL -->
-    <section class="testimonial">
-
-        <div class="container">
-
-            <div class="testimonial-box">
-
-                <p>
-                    “The space gives our team the professional setup
-                    we need without the cost and hassle of a traditional
-                    office.”
-                </p>
-
-                <span>
-                    — Example member testimonial
-                </span>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- CTA -->
     <section class="cta">
 
-        <div class="container">
+      <div class="container">
 
-            <div class="cta-box">
+        <h2>
+          Ready to Find Your New Workspace?
+        </h2>
 
-                <div>
+        <p>
+          Schedule a tour and discover whether WorkNest is
+          the right environment for your work.
+        </p>
 
-                    <h2>
-                        Ready to see the space?
-                    </h2>
+        <a
+          href="#contact"
+          class="button button-primary"
+        >
+          Schedule a Tour
+        </a>
 
-                    <p>
-                        Book a complimentary tour and find the
-                        workspace that fits you.
-                    </p>
-
-                </div>
-
-                <a href="#contact" class="btn btn-white">
-                    Schedule a Free Tour →
-                </a>
-
-            </div>
-
-        </div>
+      </div>
 
     </section>
 
+  </main>
 
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
 
-        <div class="container">
+  <!-- =========================
+       FOOTER
+  ========================== -->
 
-            <div class="section-heading">
+  <footer>
 
-                <h2>
-                    Let's find your ideal workspace
-                </h2>
+    <div class="footer-grid">
 
-                <p>
-                    Tell us what you need and our team will
-                    get back to you.
-                </p>
+      <div>
 
-            </div>
+        <h3>
+          WorkNest
+        </h3>
 
+        <p>
+          Premium coworking spaces designed for professionals,
+          entrepreneurs, remote workers, and growing teams.
+        </p>
 
-            <div class="contact-grid">
+      </div>
 
 
-                <!-- CONTACT INFO -->
-                <div class="contact-card">
+      <div>
 
-                    <h3>
-                        Talk to our team
-                    </h3>
+        <h3>
+          Quick Links
+        </h3>
 
-                    <p>
-                        Have questions about pricing, availability,
-                        or workspace options?
-                    </p>
+        <p>
+          <a href="#spaces">
+            Spaces
+          </a>
+        </p>
 
+        <p>
+          <a href="#amenities">
+            Amenities
+          </a>
+        </p>
 
-                    <div class="contact-item">
+        <p>
+          <a href="#process">
+            How It Works
+          </a>
+        </p>
 
-                        <strong>Phone</strong>
+        <p>
+          <a href="#contact">
+            Schedule a Tour
+          </a>
+        </p>
 
-                        <a href="tel:+14155550138">
-                            +1 (415) 555-0138
-                        </a>
+      </div>
 
-                    </div>
 
+      <div>
 
-                    <div class="contact-item">
+        <h3>
+          Contact
+        </h3>
 
-                        <strong>Hours</strong>
+        <!-- Replace with your actual US business number -->
+        <p>
+          <a href="tel:+18005550150">
+            (800) 555-0150
+          </a>
+        </p>
 
-                        Monday–Friday,
-                        9:00 AM–6:00 PM
+        <p>
+          United States
+        </p>
 
-                    </div>
-
-
-                    <div class="contact-item">
-
-                        <strong>Tour</strong>
-
-                        Complimentary workspace tours available
-                        by appointment.
-
-                    </div>
-
-                </div>
-
-
-                <!-- FORM -->
-                <div class="form-card">
-
-                    <h3>
-                        Book a free tour
-                    </h3>
-
-                    <form id="tourForm">
-
-                        <label>
-                            Full Name
-
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Your name"
-                                required
-                            >
-
-                        </label>
-
-
-                        <label>
-                            Work Email
-
-                            <input
-                                type="email"
-                                name="email"
-                                placeholder="you@company.com"
-                                required
-                            >
-
-                        </label>
-
-
-                        <label>
-                            Workspace Type
-
-                            <select name="workspace" required>
-
-                                <option value="">
-                                    Select one
-                                </option>
-
-                                <option>
-                                    Hot Desk
-                                </option>
-
-                                <option>
-                                    Dedicated Desk
-                                </option>
-
-                                <option>
-                                    Private Office
-                                </option>
-
-                                <option>
-                                    Meeting Room
-                                </option>
-
-                            </select>
-
-                        </label>
-
-
-                        <label>
-                            Message
-
-                            <textarea
-                                name="message"
-                                placeholder="Tell us about your workspace needs"
-                            ></textarea>
-
-                        </label>
-
-
-                        <button
-                            type="submit"
-                            class="btn btn-primary"
-                        >
-                            Request My Tour →
-                        </button>
-
-                        <small id="form-message">
-                            We’ll use your details only to respond
-                            to your inquiry.
-                        </small>
-
-                    </form>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- FOOTER -->
-    <footer>
-
-        <div class="container footer">
-
-            <div>
-                © 2026 WorkNest.
-                All rights reserved.
-            </div>
-
-            <div>
-                <a href="#home">Home</a>
-                <a href="#spaces">Spaces</a>
-                <a href="#pricing">Pricing</a>
-                <a href="#contact">Contact</a>
-            </div>
-
-        </div>
-
-    </footer>
-
-
-    <!-- MOBILE CTA -->
-    <div class="mobile-cta">
-
-        <a href="#contact" class="btn btn-primary">
-            Book a Tour
-        </a>
-
-        <a href="tel:+14155550138" class="btn btn-outline">
-            Call Now
-        </a>
+      </div>
 
     </div>
 
 
-    <script>
+    <div class="footer-bottom">
+      © 2026 WorkNest. All rights reserved.
+    </div>
 
-        document
-            .getElementById("tourForm")
-            .addEventListener("submit", function(event) {
+  </footer>
 
-                event.preventDefault();
 
-                document
-                    .getElementById("form-message")
-                    .textContent =
-                    "Thank you! Your tour request has been received.";
+  <!-- =========================
+       FORM SCRIPT
+  ========================== -->
 
-            });
+  <script>
 
-    </script>
+    /*
+      Front-end demo behavior.
+
+      IMPORTANT:
+      Connect this form to your actual CRM, backend,
+      booking system, or approved form-processing
+      service before sending Google Ads traffic.
+    */
+
+    const tourForm = document.getElementById("tourForm");
+
+    tourForm.addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      const submitButton =
+        tourForm.querySelector(".submit-button");
+
+      submitButton.textContent = "Request Received";
+      submitButton.disabled = true;
+
+      setTimeout(function() {
+
+        alert(
+          "Thank you for your interest. Please connect this form to your actual lead or booking system before launching your campaign."
+        );
+
+        tourForm.reset();
+
+        submitButton.textContent = "Request a Tour";
+        submitButton.disabled = false;
+
+      }, 500);
+
+    });
+
+  </script>
 
 </body>
 </html>
